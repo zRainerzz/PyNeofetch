@@ -83,7 +83,7 @@ def display_info():
     info = get_system_info()
     max_key_length = max(len(key) for key in info)
     for key, value in info.items():
-        print(f"{key.ljust(max_key_length)} : {value}")
+        print(f"\033[94m{key.ljust(max_key_length)}\033[0m : \033[92m{value}\033[0m")
 
 if __name__ == "__main__":
     display_info()
