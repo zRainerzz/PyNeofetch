@@ -63,7 +63,6 @@ def get_cpu_info():
     except:
         return "Unknown"
 
-
 def get_system_info():
     info = {
         "OS": f"{platform.system()} {platform.release()} ({platform.version()})",
@@ -79,11 +78,10 @@ def get_system_info():
     return info
 
 def display_info():
-    banner()
     info = get_system_info()
     max_key_length = max(len(key) for key in info)
     for key, value in info.items():
-        print(f"{key.ljust(max_key_length)} : {value}")
+        print(f"{bcolors.BRIGHTMAGENTA}{key.ljust(max_key_length)}{bcolors.ENDC} : {bcolors.BRIGHTGREEN}{value}{bcolors.ENDC}")
 
 if __name__ == "__main__":
     display_info()
